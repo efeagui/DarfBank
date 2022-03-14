@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DarfBank.Controls.FrameViewDashBoard">
+  <ContentView.Content>
+        <StackLayout  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  >
+            <Frame x:Name="frame" HeightRequest="120" HasShadow="True"  Padding="0" CornerRadius="10" BackgroundColor="#0C1F4B">
+                <Grid HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Label x:Name="lblNo" Grid.Row="0" TextColor="White"   FontSize="18" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="CenterAndExpand"></Label>
+                    <Label x:Name="lblDesc" Grid.Row="1" TextColor="White"   FontSize="12" HorizontalOptions="Center" VerticalOptions="CenterAndExpand"></Label>
+                </Grid>
+            </Frame>
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>

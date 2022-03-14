@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DarfBank.Views.Login.NewTransaction"
+             xmlns:TemplatedPage="clr-namespace:DarfBank.Controls"
+             Shell.NavBarIsVisible="True"
+             BackgroundColor="#DBE9F7"
+             Title="Generar nueva Transaccion">
+    <ContentPage.Content>
+        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" 
+              RowDefinitions="200,Auto,100,Auto,Auto,Auto,Auto" ColumnDefinitions="*,*">
+            <CollectionView Grid.Row="0" SelectionMode="Single"  Grid.ColumnSpan="2" x:Name="cvCard" HeightRequest="200"
+                HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Horizontal" />
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate >
+                    <DataTemplate>
+                        <TemplatedPage:CardView></TemplatedPage:CardView>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <Label  Grid.Row="1" Margin="20,0,0,0" Text="Transfer To" VerticalOptions="Center" FontAttributes="Bold" TextColor="#202020" ></Label>
+            <Label x:Name="btnNew" Grid.Row="1" Grid.Column="1" HeightRequest="40" Margin="0,0,20,0"   
+                    Text="+ New Payee" HorizontalOptions="End" VerticalOptions="Center" FontAttributes="Bold" TextColor="#202020">
+            </Label>
+
+            <CollectionView Grid.Row="2" SelectionMode="Single" Grid.ColumnSpan="2" x:Name="cvUser" HeightRequest="200"
+                HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Horizontal" />
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate >
+                    <DataTemplate>
+                        <TemplatedPage:CardCircleImage></TemplatedPage:CardCircleImage>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <Frame CornerRadius="20" Margin="10,5" Grid.Row="3" Grid.ColumnSpan="2">
+                <StackLayout Margin="-20">
+                    <TemplatedPage:CustomEntry CornerRadius="20" Margin="0" BorderColor="LightGray" HorizontalTextAlignment="Start" FontSize="17"
+                                HeightRequest="50" Keyboard="Numeric" Placeholder="Cantidad a enviar" BackgroundColor="White" PlaceholderColor="Gray" TextColor="#0C1F4B"/>
+                </StackLayout>
+            </Frame>
+            <Button x:Name="btnPay" Grid.Row="4" Grid.ColumnSpan="2" HeightRequest="50" Margin="20,0,20,0"   CornerRadius="20" 
+                    Text="Make Payment"  BackgroundColor="#202020" TextColor="White"></Button>
+
+            <Label  Grid.Row="5" Margin="20,0,0,0" Text="Recent Transaction" VerticalOptions="Center" FontAttributes="Bold" TextColor="#202020" ></Label>
+            <ScrollView Grid.Row="6" Grid.ColumnSpan="2">
+                <Grid HorizontalOptions="FillAndExpand"  Padding="20,0"  VerticalOptions="Start"
+              RowDefinitions="Auto" ColumnDefinitions="*">
+                    <ListView x:Name="listView" Grid.Row="0" Grid.ColumnSpan="2" HasUnevenRows="True" SeparatorVisibility="None"  HorizontalOptions="FillAndExpand" VerticalOptions="Start">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <TemplatedPage:FrameViewDashBoard></TemplatedPage:FrameViewDashBoard>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Grid>
+            </ScrollView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage> 

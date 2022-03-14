@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DarfBank.Views.Login.HistoryCard"
+             xmlns:control="clr-namespace:DarfBank.Controls"
+             Shell.NavBarIsVisible="True"
+             BackgroundColor="#DBE9F7"
+             Title="Historial Crediticio">
+    
+    <ContentPage.Content>
+        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="Start"
+              RowDefinitions="Auto,Auto,Auto" ColumnDefinitions="*,Auto">
+            <DatePicker x:Name="dt" IsVisible="false" DateSelected="dt_DateSelected"></DatePicker>
+
+            <Frame Grid.Row="0" VerticalOptions="Start" BackgroundColor="#191A4C" Grid.ColumnSpan="2" HasShadow="True" 
+                   Padding="0" Margin="0,-10,0,40" CornerRadius="20" HeightRequest="150" >
+            </Frame>
+
+            <control:CircleImageHistoryCard Grid.Row="0" Grid.Column="0" Margin="0,30,0,10"  
+            Image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWR7fU-Ju22niixgRowQPqmhmMbv-4aKkcJQ"  
+            FrameHeight="150" FrameWidth="100" CornerRadius="20" HorizontalOptions="Start"  VerticalOptions="EndAndExpand"
+                                 BorderColor="White"></control:CircleImageHistoryCard>
+            
+            <StackLayout Spacing="0" Grid.Row="0" Grid.Column="1" VerticalOptions="EndAndExpand" HorizontalOptions="Center" Margin="0,0,30,90">
+                <Label Text="Favio Aguilera" TextColor="white" FontAttributes="Bold" FontSize="20"></Label>
+                <Label Text="Balance actual:" TextColor="white"></Label>
+                <Label Text="Lps. 5,229.00" TextColor="white" FontAttributes="Bold" FontSize="20"></Label>
+            </StackLayout>
+            <Label Grid.Row="1" Grid.Column="0" Margin="20,0,0,0" x:Name="lblDate" VerticalOptions="Center" HorizontalOptions="Start" FontAttributes="Bold" Text="12 Feb 2022" TextColor="#202020">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"></TapGestureRecognizer>
+                </Label.GestureRecognizers>
+            </Label>
+            <Button x:Name="btnNew" Grid.Row="1" Grid.Column="1" HeightRequest="40" Margin="0,0,20,0"   CornerRadius="20" 
+                    Text="Nueva Transferencia"  BackgroundColor="#202020" TextColor="White" Clicked="btnNew_Clicked"></Button>
+            <ScrollView Grid.Row="2" Grid.ColumnSpan="2">
+                <Grid HorizontalOptions="FillAndExpand"  Padding="20,0"  VerticalOptions="Start"
+              RowDefinitions="Auto" ColumnDefinitions="*">
+
+                    <ListView x:Name="listView" Grid.Row="0" Grid.ColumnSpan="2" HasUnevenRows="True" SeparatorVisibility="None" ItemSelected="listView_ItemSelected" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <control:FrameViewHistoryCard></control:FrameViewHistoryCard>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Grid>
+            </ScrollView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

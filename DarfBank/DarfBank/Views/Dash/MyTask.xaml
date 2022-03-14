@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DarfBank.Views.Dash.MyTask"
+              xmlns:custom="clr-namespace:DarfBank.Controls"
+             BackgroundColor="#DBE9F7"
+             Title="Pagar Servicios">
+    
+    <ContentPage.Content>
+        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" Padding="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" Text="Hola, Favio!" TextColor="#0C1F4B"  VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand" />
+            <Label Grid.Row="1" Text="BUSCAR Y PAGAR SERVICIO PP" FontAttributes="Bold" FontSize="23" TextColor="#0C1F4B"  VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand" />
+            <Frame Grid.Row="2" CornerRadius="20" Padding="20">
+                <StackLayout>
+                    <Label Text="Deletriar un servicio" FontAttributes="Bold" TextColor="#0C1F4B"  VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand" />
+                    <custom:CustomEntry CornerRadius="20" Margin="0" BorderColor="#0C1F4B" HorizontalTextAlignment="Start" FontSize="17"
+                                HeightRequest="40"  BackgroundColor="White" PlaceholderColor="Gray" TextColor="#0C1F4B"/>
+                </StackLayout>
+            </Frame>
+            <Label Grid.Row="3" Text="Mis Movimientos" FontAttributes="Bold" FontSize="23" TextColor="#0C1F4B"  VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand" />
+            <Grid Grid.Row="4" HorizontalOptions="FillAndExpand" Padding="0,20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="btnRecent" Grid.Column="0" Text="S-Publicos" Clicked="btnRecent_Clicked" BackgroundColor="#0C1F4B"  TextColor="White" CornerRadius="20"></Button>
+                <Button x:Name="btnToday" Grid.Column="1" Text="S-Privados" Clicked="btnToday_Clicked" BackgroundColor="White" TextColor="#0C1F4B" CornerRadius="20"></Button>
+                <Button x:Name="btnUpcoming" Grid.Column="2" Text="Todos los S" Clicked="btnToday_Clicked" BackgroundColor="White" TextColor="#0C1F4B" CornerRadius="20"></Button>
+            </Grid>
+            
+            <ListView Grid.Row="5" x:Name="listView" HeightRequest="400" ItemSelected="listView_ItemSelected" HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell >
+                            <custom:TaskView/>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <ListView Grid.Row="5" x:Name="listView1" HeightRequest="400" IsVisible="true" ItemSelected="listView_ItemSelected" HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell >
+                            <custom:NewTaskView/>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

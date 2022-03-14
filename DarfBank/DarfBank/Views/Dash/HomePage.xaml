@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DarfBank.Views.Dash.HomePage"
+            xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+            xmlns:local="clr-namespace:DarfBank.Views.Dash"
+            android:TabbedPage.ToolbarPlacement="Bottom"
+            android:TabbedPage.BarItemColor="Blue"
+            android:TabbedPage.BarSelectedItemColor="Red">
+    <!--Pages can be added as references or inline-->
+    <NavigationPage Title="home"
+                    Icon="https://www.rawshorts.com/freeicons/wp-content/uploads/2017/01/blue_repicthousebase_1484336386-1.png">
+        <x:Arguments>
+            <!--<local:Dashboard />-->
+        </x:Arguments>
+    </NavigationPage>
+    <NavigationPage Title="Dashboard"
+                    Icon="https://www.rawshorts.com/freeicons/wp-content/uploads/2017/01/blue_repicthousebase_1484336386-1.png">
+        <x:Arguments>
+            <!--<local:Dashboard />-->
+        </x:Arguments>
+    </NavigationPage>
+</TabbedPage>

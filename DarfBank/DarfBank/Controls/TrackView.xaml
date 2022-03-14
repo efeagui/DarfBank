@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:view="clr-namespace:DarfBank.Controls"
+             x:Class="DarfBank.Controls.TrackView">
+    
+  <ContentView.Content>
+        <Grid  RowSpacing="0" ColumnSpacing="10" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="60"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid VerticalOptions="FillAndExpand" HorizontalOptions="CenterAndExpand" Grid.Row="0" Grid.Column="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <BoxView  WidthRequest="1" Grid.Row="0" Grid.Column="0"  VerticalOptions="FillAndExpand" BackgroundColor="Black"/>
+            </Grid>
+
+            <StackLayout Padding="0,20,0,0">
+                <Frame x:Name="frame" Grid.Row="0" Grid.Column="0" HasShadow="True" BorderColor="LightGray" HeightRequest="40" WidthRequest="40" CornerRadius="100" HorizontalOptions="Center" Padding="0">
+                    <Image x:Name="img" Source="{Binding Img}" HorizontalOptions="Center" VerticalOptions="Center" />
+                </Frame>
+            </StackLayout>
+
+            <StackLayout  Grid.Row="0" Grid.Column="1" Padding="0" HeightRequest="70" HorizontalOptions="FillAndExpand"  VerticalOptions="Center">
+                <Frame HeightRequest="70"  VerticalOptions="Center" Margin="0,-20,0,0" HasShadow="True" BackgroundColor="#0C1F4B" CornerRadius="20" BorderColor="LightGray">
+                    <StackLayout  Padding="0" HeightRequest="70" HorizontalOptions="FillAndExpand"  VerticalOptions="Center">
+                        <Label x:Name="lblTime" Text="{Binding Time}" TextColor="White"></Label>
+                        <Label x:Name="lblComment" Text="{Binding Comment}"  FontAttributes="Bold" TextColor="White"></Label>
+                        <Label x:Name="lblcash" Text="{Binding cash}"  FontAttributes="Bold" TextColor="White"></Label>
+                        
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+        </Grid>
+    </ContentView.Content>
+</ContentView>

@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DarfBank.Views.Dash.ActiveProject"
+             xmlns:TemplatedPage="clr-namespace:DarfBank.Views.Dash.Template" 
+             xmlns:custom="clr-namespace:DarfBank.Controls"
+             BackgroundColor="#F5F5F5"
+             Title="Active Projects">
+    
+    <ContentPage.Content>
+        <ScrollView HorizontalOptions="Start" VerticalOptions="Start" >
+            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+                <Label Text="10 Projects are active." TextColor="Black" Margin="20,20,20,0"></Label>
+                <Frame CornerRadius="20" Margin="10,5">
+                    <StackLayout Margin="-20">
+                        <custom:CustomEntry CornerRadius="20" Margin="0" BorderColor="LightGray" HorizontalTextAlignment="Start" FontSize="17"
+                                HeightRequest="50" Placeholder="Search Project" BackgroundColor="White" PlaceholderColor="Gray" TextColor="#0C1F4B"/>
+                    </StackLayout>
+                </Frame>
+                <CollectionView x:Name="cv" HeightRequest="400"
+                HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                    <CollectionView.ItemsLayout>
+                        <LinearItemsLayout Orientation="Horizontal" />
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate >
+                        <DataTemplate>
+                            <TemplatedPage:ActiveProjectTemplate></TemplatedPage:ActiveProjectTemplate>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+                <Grid RowDefinitions="Auto, Auto, Auto"
+                HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" Padding="20,-25,20,0">
+
+                    <Label Grid.Row="0" Text="My Task" FontAttributes="Bold" FontSize="23" TextColor="#0C1F4B"  VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand" />
+                    <Grid ColumnDefinitions="*,*,*" Grid.Row="1" HorizontalOptions="FillAndExpand" Padding="0,5">
+                        <Label x:Name="btnRecent" Margin="10,0,0,0"  Grid.Column="0" Text="Recent" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand"  TextColor="#0C1F4B">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="btnRecent_Clicked"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+                        <Label x:Name="btnToday" Grid.Column="1" Text="Today" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand"  TextColor="DarkGray">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="btnToday_Clicked"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+                        <Label x:Name="btnUpcoming" Grid.Column="2" Text="Upcoming" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand"  TextColor="DarkGray">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="btnToday_Clicked"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </Grid>
+
+                    <ListView Grid.Row="2" x:Name="listView" HeightRequest="400" ItemSelected="listView_ItemSelected" HasUnevenRows="True">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell >
+                                    <custom:TaskView/>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+
+                    <ListView Grid.Row="2" x:Name="listView1" HeightRequest="400" IsVisible="true" ItemSelected="listView_ItemSelected" HasUnevenRows="True">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell >
+                                    <custom:NewTaskView/>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+
+                </Grid>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

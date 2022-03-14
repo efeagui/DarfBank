@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"  xmlns:models="clr-namespace:DarfBank.Models"
+             x:Class="DarfBank.Controls.NewTaskView">
+  <ContentView.Content>
+        <StackLayout x:DataType="models:TaskViewModel" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  Padding="5">
+            <Frame x:Name="frame" HeightRequest="120" HasShadow="True"  Padding="0" CornerRadius="10" BackgroundColor="White">
+                <Grid HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Padding="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Label  Grid.Row="0" TextColor="#0C1F4B" Text="{Binding Name}"  FontSize="15" FontAttributes="Bold" HorizontalOptions="FillAndExpand" VerticalOptions="Start"></Label>
+                    <Label  Grid.Row="1" TextColor="DarkGray" Text="{Binding Description}"  FontSize="12"  HorizontalOptions="FillAndExpand" VerticalOptions="Start"></Label>
+                </Grid>
+            </Frame>
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>
