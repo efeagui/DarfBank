@@ -39,7 +39,7 @@ namespace DarfBank.Views.Dash
 
         private async void btn2_Clicked(object sender, EventArgs e)
         {
-            await Shell.Current.GoToAsync("MyTask");
+            await Shell.Current.GoToAsync("Services");
         }
     }
 }

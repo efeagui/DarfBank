@@ -16,7 +16,6 @@ namespace DarfBank.Views.Dash
         public ActiveProject()
         {
             InitializeComponent();
-            listView.ItemsSource = new TrackActivityModel().GetTask();
         }
         protected override void OnAppearing()
         {
@@ -27,24 +26,17 @@ namespace DarfBank.Views.Dash
 
         private void listView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            if (listView.SelectedItem != null)
-                listView.SelectedItem = null;
+            
         }
 
         private void btnRecent_Clicked(object sender, EventArgs e)
         {
             ChangeButtonAppearance((Label)sender);
-            listView.IsVisible = true;
-            listView1.IsVisible = false;
-            listView.ItemsSource = new TrackActivityModel().GetTask();
         }
 
         private void btnToday_Clicked(object sender, EventArgs e)
         {
             ChangeButtonAppearance((Label)sender);
-            listView1.IsVisible = true;
-            listView.IsVisible = false;
-            listView1.ItemsSource = new TrackActivityModel().GetTask();
         }
 
         private void ChangeButtonAppearance(Label btn)

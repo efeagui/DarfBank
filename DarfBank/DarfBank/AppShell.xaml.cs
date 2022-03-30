@@ -18,7 +18,7 @@ namespace DarfBank
             Routing.RegisterRoute(nameof(Dashboard), typeof(Dashboard));
             Routing.RegisterRoute(nameof(HomePage), typeof(HomePage));
             Routing.RegisterRoute(nameof(TarejetaCredito), typeof(TarejetaCredito));
-            Routing.RegisterRoute(nameof(MyTask), typeof(MyTask));
+            Routing.RegisterRoute(nameof(Services), typeof(Services));
             Routing.RegisterRoute(nameof(HistoryCard), typeof(HistoryCard));
             Routing.RegisterRoute(nameof(NewTransaction), typeof(NewTransaction));
         }

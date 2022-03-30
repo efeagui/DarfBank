@@ -51,16 +51,6 @@
                         </Label>
                     </Grid>
 
-                    <ListView Grid.Row="2" x:Name="listView" HeightRequest="400" ItemSelected="listView_ItemSelected" HasUnevenRows="True">
-                        <ListView.ItemTemplate>
-                            <DataTemplate>
-                                <ViewCell >
-                                    <custom:TaskView/>
-                                </ViewCell>
-                            </DataTemplate>
-                        </ListView.ItemTemplate>
-                    </ListView>
-
                     <ListView Grid.Row="2" x:Name="listView1" HeightRequest="400" IsVisible="true" ItemSelected="listView_ItemSelected" HasUnevenRows="True">
                         <ListView.ItemTemplate>
                             <DataTemplate>

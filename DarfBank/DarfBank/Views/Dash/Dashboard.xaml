@@ -67,7 +67,7 @@
                 </Grid.ColumnDefinitions>
                 <Button Text="Transferencia Del mismo banco" x:Name="btn1" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" HeightRequest="120" 
                         Grid.Row="0" Grid.Column="0" FontSize="12" FontAttributes="Bold" CornerRadius="10" BackgroundColor="#0C1F4B"/>
-                <Button Text="Pagar Servicios o danaciones" x:Name="btn2" Clicked="btn2_Clicked" CornerRadius="10" BackgroundColor="#0C1F4B" VerticalOptions="CenterAndExpand" HorizontalOptions="Center"  WidthRequest="{Binding Width, Source={x:Reference btn1}}" 
+                <Button Text="Pago de Servicios o Donaciones" x:Name="btn2" Clicked="btn2_Clicked" CornerRadius="10" BackgroundColor="#0C1F4B" VerticalOptions="CenterAndExpand" HorizontalOptions="Center"  WidthRequest="{Binding Width, Source={x:Reference btn1}}" 
                         HeightRequest="120"  Grid.Row="1" Grid.Column="0" FontSize="12" FontAttributes="Bold"/>
 
                 <Button Text="Transferencia ACH a otro bancos" x:Name="btn3" CornerRadius="10" BackgroundColor="#0C1F4B" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" WidthRequest="{Binding Width, Source={x:Reference btn1}}"

@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DarfBank.Views.Dash.PayServicePage"
+             Title="Pagar Servicio">
+    <ContentPage.Content>
+        <StackLayout Margin="20" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="10">
+            <Frame x:Name="frame" HeightRequest="280" HasShadow="True" Padding="0" CornerRadius="10" BackgroundColor="White">
+                <Grid HorizontalOptions="FillAndExpand" Padding="10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    
+                    <Label  Grid.Row="1" Grid.ColumnSpan="2" TextColor="#0C1F4B" x:Name="idServicioPay" IsVisible="false"></Label>
+                    <Label  Grid.Row="1" Grid.ColumnSpan="2" TextColor="#0C1F4B" x:Name="idTipoServicioPay" IsVisible="false"></Label>
+                    
+                    <Label  Grid.Row="1" Grid.ColumnSpan="2" TextColor="#0C1F4B" Text="Servicio"  FontSize="14" FontAttributes="Bold" HorizontalOptions="Start" VerticalOptions="Start"></Label>
+                    <Label Grid.Row="3" TextColor="#0C1F4B" Grid.Column="0" x:Name="ServicioPay" FontSize="20" FontAttributes="Bold" HorizontalOptions="Start" VerticalOptions="Start"></Label>
+                    
+                    <Label  Grid.Row="1" Grid.ColumnSpan="2" TextColor="#0C1F4B" Text="Número de Cuenta" FontSize="14" FontAttributes="Bold" HorizontalOptions="End" VerticalOptions="Start"></Label>
+                    <Label  Grid.Row="3" TextColor="#0C1F4B" Grid.Column="1" x:Name="numero_cuentaPay" FontSize="20"  HorizontalOptions="End" VerticalOptions="Start"></Label>
+
+                    <Label Grid.Row="6" Grid.ColumnSpan="2" TextColor="#0C1F4B" Text="Monto Total del Servicio"  FontSize="14" FontAttributes="Bold" HorizontalOptions="Start" VerticalOptions="Start"></Label>
+                    <Label Grid.Row="7" TextColor="#0C1F4B" Grid.Column="0" x:Name="totalPayLps" FontSize="20" FontAttributes="Bold" HorizontalOptions="Start" VerticalOptions="Start"></Label>
+                    <Label  Grid.Row="7" x:Name="totalPay" IsVisible="false"></Label>
+
+                    <Entry Grid.Row="9" Grid.ColumnSpan="2" TextColor="#0C1F4B" Placeholder="Ingrese cantidad a Pagar" FontSize="16" FontAttributes="Bold" Keyboard="Numeric"></Entry>
+
+                    <Button Grid.Row="11" Grid.ColumnSpan="2" TextColor="#ffffff" BackgroundColor="#0C1F4B" Text="REALIZAR PAGO" FontSize="14" FontAttributes="Bold" CornerRadius="10"></Button>
+                </Grid>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
