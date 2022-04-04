@@ -126,7 +126,7 @@ namespace DarfBank.Views.Dash
         private async void listViewServices_ItemSelected(object sender, ItemTappedEventArgs e)
         {
             var details = e.Item as Models.Services;
-            await Navigation.PushAsync(new PayServicePage(details.idServicio, details.Servicio, details.numero_cuenta, details.idTipoServicio, details.idCliente));
+            await Navigation.PushAsync(new PayServicePage(details.idServicio, details.idCuenta, details.Servicio, details.numero_cuenta, details.idTipoServicio, details.idCliente));
         }
     }
 }

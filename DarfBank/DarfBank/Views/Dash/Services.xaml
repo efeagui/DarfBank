@@ -54,6 +54,7 @@
                                             <RowDefinition Height="Auto"></RowDefinition>
                                         </Grid.RowDefinitions>
                                         <Label  Grid.Row="1" Grid.ColumnSpan="2" TextColor="#0C1F4B" Text="{Binding idServicio}" IsVisible="false"></Label>
+                                        <Label  Grid.Row="1" Grid.ColumnSpan="2" TextColor="#0C1F4B" Text="{Binding idCuenta}" IsVisible="false"></Label>
                                         <Label  Grid.Row="1" Grid.ColumnSpan="2" TextColor="#0C1F4B" Text="{Binding idTipoServicio}" IsVisible="false"></Label>
                                         <Label  Grid.Row="1" Grid.ColumnSpan="2" TextColor="#0C1F4B" Text="Servicio"  FontSize="14" FontAttributes="Bold" HorizontalOptions="Start" VerticalOptions="Start"></Label>
                                         <Label Grid.Row="3" TextColor="#0C1F4B" Grid.Column="0" Text="{Binding Servicio}" FontSize="20" FontAttributes="Bold" HorizontalOptions="Start" VerticalOptions="Start"></Label>
