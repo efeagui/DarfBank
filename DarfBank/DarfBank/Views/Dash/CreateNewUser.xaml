@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DarfBank.Views.Dash.CreateNewUser">
+    <ContentPage.Content>
+        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="20"
+              RowDefinitions="Auto,Auto,Auto,Auto,21,Auto,Auto,21,Auto,Auto,21,Auto,Auto,21,Auto,Auto,Auto">
+            <Label Grid.Row="0" Text="Confirmation" FontSize="20" FontAttributes="Bold" TextColor="#202020"
+                HorizontalOptions="Center" />
+            <StackLayout Grid.Row="1" Padding="0,10,0,0" Margin="20,20,0,0">
+                <Frame x:Name="frame" HasShadow="True" HeightRequest="90" WidthRequest="90" CornerRadius="100" HorizontalOptions="Center" Padding="0">
+                    <Image x:Name="img" Source="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWR7fU-Ju22niixgRowQPqmhmMbv-4aKkcJQ" Aspect="AspectFill" />
+                </Frame>
+                <Label Text="Anushka Shetty" HorizontalOptions="Center" HorizontalTextAlignment="Center" FontSize="20" FontAttributes="Bold" TextColor="#202020"></Label>
+            </StackLayout>
+            <Label Grid.Row="2" Text="From" Margin="0,40,0,0" FontSize="15" TextColor="#202020" FontAttributes="Bold"></Label>
+            <Label Grid.Row="3" Text="1234********5455" FontSize="15" TextColor="Gray" ></Label>
+            <BoxView Grid.Row="4" Margin="0,10" BackgroundColor="LightGray"></BoxView>
+            <Label Grid.Row="5" Text="To" FontSize="15" TextColor="#202020"  FontAttributes="Bold"></Label>
+            <Label Grid.Row="6" Text="Karishma Sharma" FontSize="15" TextColor="Gray" ></Label>
+            <BoxView Grid.Row="7" Margin="0,10" BackgroundColor="LightGray"></BoxView>
+            <Label Grid.Row="8" Text="Transfer Amount" FontSize="15" TextColor="#202020" FontAttributes="Bold"></Label>
+            <Label Grid.Row="9" Text="$360.00" FontSize="15" TextColor="Gray" ></Label>
+            <BoxView Grid.Row="10" Margin="0,10" BackgroundColor="LightGray"></BoxView>
+            <Label Grid.Row="11" Text="Transaction Fee" FontSize="15" TextColor="#202020" FontAttributes="Bold"></Label>
+            <Label Grid.Row="12" Text="Free" FontSize="15" TextColor="Gray" ></Label>
+            <BoxView Grid.Row="13" Margin="0,10" BackgroundColor="LightGray"></BoxView>
+            <Label Grid.Row="14" Text="Total" FontSize="15" TextColor="#202020" FontAttributes="Bold"></Label>
+            <Label Grid.Row="15" Text="$360.00" FontSize="15" TextColor="Gray" ></Label>
+            <Button x:Name="btnPay" Grid.Row="16" Margin="0,20,0,0" HeightRequest="50"  CornerRadius="20" 
+                    Text="Confirm Payment"  BackgroundColor="#202020" TextColor="White" ></Button>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

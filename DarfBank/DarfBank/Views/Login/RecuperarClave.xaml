@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DarfBank.Views.Login.RecuperarClave"
+             BackgroundColor="#DBE9F7"
+             Title="Recuperar Credencial">
+    <ContentPage.Content>
+        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="20"
+              RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto">
+
+            <StackLayout Grid.Row="1" Padding="0,-10,0,0" Margin="0,0,0,150">
+                <Frame x:Name="frame" HasShadow="True" HeightRequest="180" WidthRequest="180" CornerRadius="100" HorizontalOptions="Center" Padding="0">
+                    <Image x:Name="imagen" Source="https://siceiweb.net.ve/pix/icono-recuperar-clave.png" Aspect="AspectFill" />
+                </Frame>
+            </StackLayout>
+            
+            <Label Grid.Row="2" Text="Ingrese su Correo Electronico"  HorizontalOptions="FillAndExpand" TextColor="#202020"></Label>
+            <Entry Grid.Row="3" HorizontalTextAlignment="Start" HeightRequest="50" Keyboard="Email" x:Name="txtemail" />
+
+            <Button x:Name="btnsalnvar" Grid.Row="16" Margin="0,-50,0,30" HeightRequest="50"  CornerRadius="20" 
+                    Text="Recuperar mis Credenciales"  BackgroundColor="#202020" TextColor="White" ></Button>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

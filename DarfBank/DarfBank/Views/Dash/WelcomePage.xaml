@@ -23,7 +23,7 @@
             <Label Grid.Row="2" Text="DarfBank es el proyecto final de la clase Programacion movil2, que simula temporalmente las transacciones financieras bancarias" TextColor="#0C1F4B" FontSize="14"></Label>
             <Label Grid.Row="3" Text="Integrantes : " FontAttributes="Bold" TextColor="#0C1F4B" HorizontalTextAlignment="Center" FontSize="25"></Label>
             <BoxView Grid.Row="4"  BackgroundColor="#DBE9F7"></BoxView>
-            <Label Grid.Row="5" Text="Favio Roberto Aguilera &#x0a;Integrante 2 &#x0a;Integrante 3 &#x0a;Integrante 4 &#x0a;Integrante 5 &#x0a;Integrante 6 &#x0a;" TextColor="#0C1F4B" FontSize="15"></Label>
+            <Label Grid.Row="5" Text="Favio Roberto Aguilera &#x0a;&#x0a;Fernando &#x0a;&#x0a;Roberto &#x0a;&#x0a;Daniela &#x0a;&#x0a;" TextColor="#0C1F4B" FontSize="15"></Label>
 
             <BoxView Grid.Row="6"  BackgroundColor="#DBE9F7"></BoxView>
             <Button Grid.Row="7" Text="Get Started" Clicked="Button_Clicked" WidthRequest="60" HeightRequest="60" TextColor="White" BackgroundColor="#0C1F4B" CornerRadius="30"></Button>
