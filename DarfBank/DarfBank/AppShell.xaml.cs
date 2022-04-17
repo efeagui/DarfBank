@@ -21,6 +21,9 @@ namespace DarfBank
             Routing.RegisterRoute(nameof(Services), typeof(Services));
             Routing.RegisterRoute(nameof(HistoryCard), typeof(HistoryCard));
             Routing.RegisterRoute(nameof(NewTransaction), typeof(NewTransaction));
+            Routing.RegisterRoute(nameof(NewUser), typeof(NewUser));
+            Routing.RegisterRoute(nameof(CreateNewUser), typeof(CreateNewUser)); 
+                Routing.RegisterRoute(nameof(RecuperarClave), typeof(RecuperarClave));
         }
 
         private async void OnMenuItemClicked(object sender, EventArgs e)

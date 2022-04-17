@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DarfBank.Views.Login.NewUser"
+              Title="Nuevo Cliente">
+    <ContentPage.Content>
+        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="20"
+              RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,21,Auto,Auto,Auto,Auto,Auto,Auto,Auto">
+
+            <StackLayout Grid.Row="1" Padding="0,-10,0,0" Margin="0,0,0,0">
+                <Frame x:Name="frame" HasShadow="True" HeightRequest="180" WidthRequest="180" CornerRadius="100" HorizontalOptions="Center" Padding="0">
+                    <Image x:Name="imagen" Source="https://i.pinimg.com/564x/a2/35/be/a235be15b45476db31526f89911e79f8.jpg" Aspect="AspectFill" />
+                </Frame>
+                <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Horizontal" Padding="0,40,0,30">
+                    <Button  VerticalOptions="CenterAndExpand" x:Name="btnfotocap" Clicked="btnfotocap_Clicked" BackgroundColor="#202020" CornerRadius="20" Text="Tomar Foto"></Button>
+                    <Button   VerticalOptions="CenterAndExpand" x:Name="btnCapturarFoto"   Clicked="btnCapturarFoto_Clicked" BackgroundColor="#202020" CornerRadius="20" Visual="Material" Text="Ir a la Galeria"></Button>
+                </StackLayout>
+            </StackLayout>
+
+            <Label Grid.Row="2" Text="Usuario" HorizontalOptions="FillAndExpand" TextColor="#202020"></Label>
+            <Entry Grid.Row="3" HorizontalTextAlignment="Start" HeightRequest="50" x:Name="txtusuario" ReturnType="Next" />
+
+            <Label Grid.Row="4" Text="Contrasenia"  HorizontalOptions="FillAndExpand" TextColor="#202020"></Label>
+            <Entry Grid.Row="5" HorizontalTextAlignment="Start" HeightRequest="50" x:Name="txtcontrasenia"  IsPassword="True"/>
+
+            <Label Grid.Row="6" Text="Correo Electronico"  HorizontalOptions="FillAndExpand" TextColor="#202020"></Label>
+            <Entry Grid.Row="7" HorizontalTextAlignment="Start" HeightRequest="50" Keyboard="Email" x:Name="txtemail" />
+
+            <Label Grid.Row="8" Text="Idenitidad" HorizontalOptions="FillAndExpand" TextColor="#202020"></Label>
+            <Entry Grid.Row="9" HorizontalTextAlignment="Start" HeightRequest="50" Keyboard="Telephone" x:Name="txtidentidad" MaxLength="13" />
+
+            <!-- <Label Grid.Row="10" Text="Rol"  HorizontalOptions="FillAndExpand" TextColor="#202020"></Label>-->
+            <Entry Grid.Row="11" Text="1" IsReadOnly="True" HorizontalTextAlignment="Start" HeightRequest="50" x:Name="txtrol" IsVisible="false" />
+
+            <!--<Label Grid.Row="12" Text="Estado"  HorizontalOptions="FillAndExpand" TextColor="#202020"></Label>-->
+            <Entry Grid.Row="13" Text="1" IsReadOnly="True" HorizontalTextAlignment="Start" HeightRequest="50" x:Name="txtestado" IsVisible="false"/>
+
+
+            <Button x:Name="btnsalnvar" Clicked="btnsalnvar_Clicked" Grid.Row="16" Margin="0,-50,0,30" HeightRequest="50"  CornerRadius="20" 
+                    Text="Confirmar Registro"  BackgroundColor="#202020" TextColor="White" ></Button>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
