@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DarfBank.Views.Dash.Services"
+              xmlns:custom="clr-namespace:DarfBank.Controls"
+             BackgroundColor="#DBE9F7"
+             Title="Pagar Servicios">
+    
+    <ContentPage.Content>
+        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" Padding="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" Text="" TextColor="#0C1F4B" VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand" />
+            <Label Grid.Row="1" Text="SERVICIOS DISPONIBLES" FontAttributes="Bold" FontSize="23" TextColor="#0C1F4B"  VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand" />
+            <Frame Grid.Row="2" CornerRadius="20" Padding="20">
+                <StackLayout>
+                    <Label Text="Buscar un servicio" FontAttributes="Bold" TextColor="#0C1F4B"  VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand" />
+                    <custom:CustomEntry CornerRadius="20" Margin="0" BorderColor="#0C1F4B" HorizontalTextAlignment="Start" FontSize="17"
+                                HeightRequest="40"  BackgroundColor="White" PlaceholderColor="Gray" TextColor="#0C1F4B"/>
+                </StackLayout>
+            </Frame>
+            <Grid Grid.Row="4" HorizontalOptions="FillAndExpand" Padding="0,20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="btnSPublic" Grid.Column="0" Text="S-Publicos" Clicked="btnSSPublic_Clicked" BackgroundColor="#0C1F4B"  TextColor="White" CornerRadius="20"></Button>
+                <Button x:Name="btnSPrivate" Grid.Column="1" Text="S-Privados" Clicked="btnSSPrivate_Clicked" BackgroundColor="White" TextColor="#0C1F4B" CornerRadius="20"></Button>
+                <Button x:Name="btnSDonate" Grid.Column="2" Text="Donaciones" Clicked="btnSSDonation_Clicked" BackgroundColor="White" TextColor="#0C1F4B" CornerRadius="20"></Button>
+            </Grid>
+            <ListView Grid.Row="5" x:Name="listViewServices" ItemTapped="listViewServices_ItemSelected" HeightRequest="400" HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell >
+                            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  Padding="5">
+                                <Frame x:Name="frame" HeightRequest="95" HasShadow="True" Padding="0" CornerRadius="10" BackgroundColor="White">
+                                    <Grid HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Padding="10">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"></RowDefinition>
+                                            <RowDefinition Height="Auto"></RowDefinition>
+                                            <RowDefinition Height="Auto"></RowDefinition>
+                                            <RowDefinition Height="Auto"></RowDefinition>
+                                            <RowDefinition Height="Auto"></RowDefinition>
+                                        </Grid.RowDefinitions>
+                                        <Label  Grid.Row="1" Grid.ColumnSpan="2" TextColor="#0C1F4B" Text="{Binding idServicio}" IsVisible="false"></Label>
+                                        <Label  Grid.Row="1" Grid.ColumnSpan="2" TextColor="#0C1F4B" Text="{Binding idCuenta}" IsVisible="false"></Label>
+                                        <Label  Grid.Row="1" Grid.ColumnSpan="2" TextColor="#0C1F4B" Text="{Binding idTipoServicio}" IsVisible="false"></Label>
+                                        <Label  Grid.Row="1" Grid.ColumnSpan="2" TextColor="#0C1F4B" Text="Servicio"  FontSize="14" FontAttributes="Bold" HorizontalOptions="Start" VerticalOptions="Start"></Label>
+                                        <Label Grid.Row="3" TextColor="#0C1F4B" Grid.Column="0" Text="{Binding Servicio}" FontSize="20" FontAttributes="Bold" HorizontalOptions="Start" VerticalOptions="Start"></Label>
+                                        <Label  Grid.Row="1" Grid.ColumnSpan="2" TextColor="#0C1F4B" Text="Número de Cuenta" FontSize="14" FontAttributes="Bold" HorizontalOptions="End" VerticalOptions="Start"></Label>
+                                        <Label  Grid.Row="3" TextColor="#0C1F4B" Grid.Column="1" Text="{Binding numero_cuenta}" FontSize="20"  HorizontalOptions="End" VerticalOptions="Start"></Label>
+                                    </Grid>
+                                </Frame>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
