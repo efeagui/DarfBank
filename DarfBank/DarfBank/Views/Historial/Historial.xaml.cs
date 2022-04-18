@@ -54,10 +54,9 @@ namespace DarfBank.Views.Historial
             }
         }
 
-        private async void lstCuentas_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        private void lstCuentas_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            var details = e.SelectedItem as Models.MovimientosBancarios.MovimientoBancario;
-            await Navigation.PushAsync(new Historial(details.idCuenta.ToString()));
+            
         }
 
         private void btnNew_Clicked(object sender, EventArgs e)
