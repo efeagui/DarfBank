@@ -82,5 +82,20 @@ namespace DarfBank.Views.Dash
         {
 
         }
+
+        private async void btn4_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new WelcomePage());
+        }
+
+        private async void btn1_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Transferencias.Transferencias());
+        }
+
+        private async void btn3_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Transferencias.Transferencias());
+        }
     }
 }

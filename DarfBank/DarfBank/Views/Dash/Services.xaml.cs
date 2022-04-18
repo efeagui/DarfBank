@@ -95,7 +95,7 @@ namespace DarfBank.Views.Dash
 
             Models.Services.Servicio obj = new Models.Services.Servicio
             {
-                idTipoServicio = "Donacion"
+                idTipoServicio = "Donaciones"
             };
             try
             {

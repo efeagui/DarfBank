@@ -26,7 +26,7 @@
             <Label Grid.Row="5" Text="Favio Roberto Aguilera &#x0a;&#x0a;Fernando &#x0a;&#x0a;Roberto &#x0a;&#x0a;Daniela &#x0a;&#x0a;" TextColor="#0C1F4B" FontSize="15"></Label>
 
             <BoxView Grid.Row="6"  BackgroundColor="#DBE9F7"></BoxView>
-            <Button Grid.Row="7" Text="Get Started" Clicked="Button_Clicked" WidthRequest="60" HeightRequest="60" TextColor="White" BackgroundColor="#0C1F4B" CornerRadius="30"></Button>
+            <!--Button Grid.Row="7" Text="Get Started" Clicked="Button_Clicked" WidthRequest="60" HeightRequest="60" TextColor="White" BackgroundColor="#0C1F4B" CornerRadius="30"></Button-->
         </Grid>
     </ContentPage.Content>
 </ContentPage>

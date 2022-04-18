@@ -34,40 +34,43 @@ namespace DarfBank.Views.Dash
         }
 
         private async void payService_Clicked(object sender, EventArgs e)
-        {            
-            if (!string.IsNullOrEmpty(PagoIngresado.Text))
+        {
+            Models.MovimientosBancarios.MovimientoBancario obj = new Models.MovimientosBancarios.MovimientoBancario
             {
-                var monto = double.Parse(totalPay.Text);
-                var pago = double.Parse(PagoIngresado.Text);
-
-                if (pago >= monto)
+                idTipoMovimiento = ServicioPay.Text,
+                fecha_movimiento = DateTime.UtcNow.ToString(),
+                idCuenta = numero_cuentaPay.Text,
+                valor = "N/A",
+                valorLps = PagoIngresado.Text,
+                concepto = ServicioPay.Text,
+                fecha_hora = DateTime.UtcNow.ToString(),
+                idCliente = Application.Current.Properties["idCliente"].ToString()
+            };
+            try
+            {
+                using (HttpClient cliente = new HttpClient())
                 {
-                    var cambio = pago - monto;
-                    
-                    WebClient client = new WebClient();
+                    Uri RequestUri = new Uri("https://fernando-castillo-201910080192.000webhostapp.com/Darf_Back/MovimientoBancario/CrearMovimientoBancario.php");
+                    var json = JsonConvert.SerializeObject(obj);
+                    var contentJSON = new StringContent(json, Encoding.UTF8, "application/json");
+                    var response = await cliente.PostAsync(RequestUri, contentJSON);
 
-                    var parametros = new System.Collections.Specialized.NameValueCollection();
-                    parametros.Add("idTipoServicio", idTipoServicioPay.Text);
-                    parametros.Add("idServicio", idServicioPay.Text);
-                    parametros.Add("idCuenta", idCuentaPay.Text);
-                    parametros.Add("valor", monto.ToString());
-                    parametros.Add("idCliente", idClientePay.Text);
+                    if (response.IsSuccessStatusCode)
+                    {
+                        await DisplayAlert("Alerta", "Pago realizado exitosamente", "OK");
+                        Task task = Navigation.PushAsync(new Dashboard());
 
-                    client.UploadValues("http://192.168.0.11/movil/servicePayment.php", "POST", parametros);
-
-                    await DisplayAlert(null, "Pago Realizado, Su cambio es: " + cambio, "OK");
-                    await Navigation.PushAsync(new Dashboard());
-                }
-                else
-                {
-                    await DisplayAlert("Error", "Pago No Realizado, Ingrese el monto correcto", "OK");
+                    }
+                    else
+                    {
+                        await DisplayAlert("Error", "No se pudo generar el pago", "Ok");
+                    }
                 }
             }
-            else
+            catch (Exception ex)
             {
-                await DisplayAlert("Error", "Ingrese un monto para realizar su pago", "OK");
-            }
-                
+                await DisplayAlert("Error",  ex.Message, "OK");
+            }                
             
         }
     }
