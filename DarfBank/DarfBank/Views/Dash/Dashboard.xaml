@@ -6,56 +6,40 @@
              Shell.NavBarHasShadow="False"
              Title="Dashboard">
     <ContentPage.Content>
-        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="20">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"></RowDefinition>
-                <RowDefinition Height="Auto"></RowDefinition>
-                <RowDefinition Height="Auto"></RowDefinition>
-                <RowDefinition Height="Auto"></RowDefinition>
-                <RowDefinition Height="Auto"></RowDefinition>
-                <RowDefinition Height="Auto"></RowDefinition>
-            </Grid.RowDefinitions>
-            <Label Grid.Row="0" Text="Buen dia, Favio Aguilera " TextColor="Black" FontAttributes="Bold" FontSize="23" Margin="0,0,0,0"></Label>
+        <StackLayout>
+            <Label Grid.Row="0" Text="Buen dia" TextColor="Black" FontAttributes="Bold" FontSize="23" Margin="0,0,0,0"></Label>
             <Label Grid.Row="1" Text="Estamos alegres de verte nuevamente" TextColor="Black" Margin="0,-10,0,0"></Label>
-            <Frame Grid.Row="2" Margin="0,10,0,0" HeightRequest="120" BackgroundColor="#0C1F4B" BorderColor="#0C1F4B" CornerRadius="20"  HasShadow="True">
-                <StackLayout>
-                    <Label Text="Cuenta de debito #758933423" TextColor="White" FontAttributes="Bold" FontSize="16"></Label>
-                    <Label Text="Favio Roberto Aguilera Duron" TextColor="White"  FontSize="12"></Label>
-                    <StackLayout Grid.Row="3" Margin="0,-20,0,0" Orientation="Horizontal" >
-                        <view:ImageCircleDashBoard HorizontalOptions="Start" Image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmNdSL0wetARyMZVIRgtl2yPZyzXSJQx4EzA"                                      
-                                          CornerRadius="100" BorderColor="LightGray"  FrameHeight="60" FrameWidth="60"></view:ImageCircleDashBoard>
-                        <Label Text="                        Lps. 11803.20" TextColor="White" FontAttributes="Bold" FontSize="20" VerticalTextAlignment="End" HorizontalTextAlignment="End"></Label>
-                        <StackLayout.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_2" NumberOfTapsRequired="1" />
-                        </StackLayout.GestureRecognizers>
-                    </StackLayout> 
-                </StackLayout>
-            </Frame>
-            <Frame Grid.Row="3" Margin="0,10,0,0" HeightRequest="120" BackgroundColor="#0C1F4B" BorderColor="#0C1F4B" CornerRadius="20"  HasShadow="True">
-                <StackLayout>
-                    <Label Text="Tarjeta de Credito" TextColor="White" FontAttributes="Bold" FontSize="16"></Label>
-                    <Label Text="Visa Premium" TextColor="White"  FontSize="12"></Label>
-                    <StackLayout Grid.Row="3" Margin="0,-20,0,0" Orientation="Horizontal" >
-                        <view:ImageCircleDashBoard HorizontalOptions="Start" Image="https://enfoquenoticias.com.mx/wp-content/uploads/2022/01/TARJETAS.jpeg"
-                                          CornerRadius="100" BorderColor="LightGray"  FrameHeight="60" FrameWidth="60"></view:ImageCircleDashBoard>
-                        <Label Text="             Disponible: L.1,803.20&#x0a; Gasto: L.11,803.20" TextColor="White" FontAttributes="Bold" FontSize="18" VerticalTextAlignment="End" HorizontalTextAlignment="End"></Label>
-                        <StackLayout.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_1" NumberOfTapsRequired="1" />
-                        </StackLayout.GestureRecognizers>
-                    </StackLayout>
-                </StackLayout>
-            </Frame>
 
-            <!--<StackLayout Grid.Row="4" HorizontalOptions="FillAndExpand" Orientation="Horizontal" VerticalOptions="FillAndExpand" Margin="0,-10,0,0">
-                <Label  Text="Asiganar funcion" HorizontalOptions="FillAndExpand" Margin="0,20,0,0" TextColor="Black" FontAttributes="Bold" FontSize="22"></Label>
-                <Image HorizontalOptions="End"  VerticalOptions="EndAndExpand" Source="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUdgNJM6tKqyFyX2I_8CNaFN8bjfQgGioZyQ" 
-                       Aspect="AspectFill" HeightRequest="40"  WidthRequest="40">
-                    <Image.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"></TapGestureRecognizer>
-                    </Image.GestureRecognizers>
-                </Image>
-            </StackLayout>-->
-
+            <ListView x:Name="lstCuentas" ItemSelected="lstCuentas_ItemSelected" RowHeight="250">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="20">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"></RowDefinition>
+                                    <RowDefinition Height="Auto"></RowDefinition>
+                                    <RowDefinition Height="Auto"></RowDefinition>
+                                    <RowDefinition Height="Auto"></RowDefinition>
+                                    <RowDefinition Height="Auto"></RowDefinition>
+                                    <RowDefinition Height="Auto"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Frame Grid.Row="1" Margin="0,10,0,0" HeightRequest="200" WidthRequest="400" BackgroundColor="#0C1F4B" BorderColor="#0C1F4B" CornerRadius="20"  HasShadow="True">
+                                    <StackLayout>
+                                        <Label Grid.Row="2" Grid.Column="1" Text="Cuenta de debito #" TextColor="White" FontAttributes="Bold" FontSize="16"></Label>
+                                        <Label Grid.Row="2" Grid.Column="2" Text="{Binding numero_cuenta}" TextColor="White" FontAttributes="Bold" FontSize="16"></Label>
+                                        <Label Grid.Row="33" Grid.Column="1" Text="Balance" TextColor="White" FontAttributes="Bold" FontSize="16"></Label>
+                                        <Label Grid.Row="3" Grid.Column="2" Text="{Binding balance}" TextColor="White" FontAttributes="Bold" FontSize="20"></Label>
+                                    </StackLayout>
+                                </Frame>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
             <Grid Grid.Row="4" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="4,20" Margin="0,-5,0,0" >
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"></RowDefinition>
@@ -76,12 +60,9 @@
                 <Button Text="Pagar Tarjeta de credito" x:Name="btn4"  VerticalOptions="CenterAndExpand" HorizontalOptions="Center" WidthRequest="{Binding Width, Source={x:Reference btn1}}"
                          HeightRequest="120" CornerRadius="10" BackgroundColor="#0C1F4B"
                          Grid.Row="1" Grid.Column="1"  FontSize="12" FontAttributes="Bold"/>
-                <!--<view:FrameViewDashBoard Grid.Row="0" Grid.Column="0" TextNo="Transferencia"  TextDesc="Del mismo banco"/>
-                <view:FrameViewDashBoard  Grid.Row="1" Grid.Column="0" TextNo="Pagar Servicios"  TextDesc="o danaciones"/>
-                <view:FrameViewDashBoard Grid.Row="0" Grid.Column="1" TextNo="Transferencia"  TextDesc="a otro banco"/>
-                <view:FrameViewDashBoard  Grid.Row="1" Grid.Column="1" TextNo="Pagar"  TextDesc="Tarjeta de credito"/>-->
             </Grid>
             <Button x:Name="btnCheckActivity" Grid.Row="5" Text="Cerrar Session" WidthRequest="60" HeightRequest="60" Clicked="BtnCheckActivity_Clicked" TextColor="White" BackgroundColor="#0C1F4B" CornerRadius="30"></Button>
-        </Grid>
+
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

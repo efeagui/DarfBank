@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using DarfBank.Views.Dash;
 using Xamarin.Forms;
+using DarfBank.Models;
 using Xamarin.Forms.Xaml;
 using Newtonsoft.Json;
-using DarfBank.Models;
 using System.Net.Http;
 using DarfBank.Setting;
 using System.Net;
@@ -42,12 +42,21 @@ namespace DarfBank.Views.Dash
 
                     if (response.StatusCode==HttpStatusCode.OK)
                      {
-                         await Navigation.PushAsync(new WelcomePage());
-                     }
-                     else
-                     {
-                         await DisplayAlert("Usuario o Contrasena ", "Incorrecta ", "OK");
-                     }
+                        
+                        User.lstUsuario user = new User.lstUsuario();
+                        var contenido = response.Content.ReadAsStringAsync().Result;
+                        user = JsonConvert.DeserializeObject<User.lstUsuario>(contenido);
+                        Application.Current.Properties["idUsuario"] = user.usuarios[0].idUsuario;
+                        Application.Current.Properties["usuario"] = user.usuarios[0].usuario;
+                        Application.Current.Properties["correo"] = user.usuarios[0].correo;
+                        Application.Current.Properties["idCliente"] = user.usuarios[0].idCliente;
+                        Application.Current.Properties["imagen"] = user.usuarios[0].imagen;
+                        await Navigation.PushAsync(new WelcomePage());
+                    }
+                    else
+                    {
+                        await DisplayAlert("Usuario o Contrasena ", "Incorrecta ", "OK");
+                    }
                  }
              }
              catch (Exception e2)

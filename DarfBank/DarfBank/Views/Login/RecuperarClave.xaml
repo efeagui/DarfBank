@@ -13,11 +13,14 @@
                     <Image x:Name="imagen" Source="https://siceiweb.net.ve/pix/icono-recuperar-clave.png" Aspect="AspectFill" />
                 </Frame>
             </StackLayout>
-            
-            <Label Grid.Row="2" Text="Ingrese su Correo Electronico"  HorizontalOptions="FillAndExpand" TextColor="#202020"></Label>
-            <Entry Grid.Row="3" HorizontalTextAlignment="Start" HeightRequest="50" Keyboard="Email" x:Name="txtemail" />
 
-            <Button x:Name="btnsalnvar" Grid.Row="16" Margin="0,-50,0,30" HeightRequest="50"  CornerRadius="20" 
+            <Label Grid.Row="2" Text="Ingrese su Identidad"  HorizontalOptions="FillAndExpand" TextColor="#202020"></Label>
+            <Entry Grid.Row="3" HorizontalTextAlignment="Start" HeightRequest="50" Keyboard="Numeric" x:Name="txtidentidad" />
+
+            <Label Grid.Row="4" Text="Ingrese su Correo Electronico"  HorizontalOptions="FillAndExpand" TextColor="#202020"></Label>
+            <Entry Grid.Row="5" HorizontalTextAlignment="Start" HeightRequest="50" Keyboard="Email" x:Name="txtemail" />
+
+            <Button x:Name="btnsalnvar" Clicked="btnsalnvar_Clicked" Grid.Row="10" Margin="0,-50,0,30" HeightRequest="50"  CornerRadius="20" 
                     Text="Recuperar mis Credenciales"  BackgroundColor="#202020" TextColor="White" ></Button>
         </Grid>
     </ContentPage.Content>
