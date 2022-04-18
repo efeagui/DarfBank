@@ -5,6 +5,7 @@ using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using DarfBank.Views.Login;
 using DarfBank.Views.Tarjetas;
 using Newtonsoft.Json;
 using Xamarin.Forms;
@@ -78,9 +79,10 @@ namespace DarfBank.Views.Dash
             await Shell.Current.GoToAsync("Services");
         }
 
-        private void lstCuentas_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        private async void lstCuentas_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-
+            var details = e.SelectedItem as Models.Cuentas.Cuenta;
+            await Navigation.PushAsync(new Historial.Historial(details.numero_cuenta.ToString()));
         }
 
         private async void btn4_Clicked(object sender, EventArgs e)
