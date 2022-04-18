@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="DarfBank.Views.Transferencias.Transferencias">
+             x:Class="DarfBank.Views.Transferencias.TransferenciasACH">
     <ContentPage.Content>
         <StackLayout Margin="20" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="10">
-            <Frame x:Name="frame" HeightRequest="350" HasShadow="True" Padding="0" CornerRadius="10" BackgroundColor="White">
+            <Frame x:Name="frame" HeightRequest="450" HasShadow="True" Padding="0" CornerRadius="10" BackgroundColor="White">
                 <Grid HorizontalOptions="FillAndExpand" Padding="10">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"></ColumnDefinition>
@@ -26,14 +26,27 @@
                         <RowDefinition Height="Auto"></RowDefinition>
                     </Grid.RowDefinitions>
 
-                    
-                    <Label Grid.Row="3" TextColor="#0C1F4B" Grid.Column="0" Text="Transferencia Bancaria" FontSize="20" FontAttributes="Bold" HorizontalOptions="Start" VerticalOptions="Start"></Label>
 
-                    <Entry Grid.Row="5" Grid.ColumnSpan="2" TextColor="#0C1F4B" x:Name="cuentaOrigen" Placeholder="Ingrese Número de Cuenta Origen" FontSize="16" FontAttributes="Bold"/>
-                    <Entry Grid.Row="6" Grid.ColumnSpan="2" TextColor="#0C1F4B" x:Name="cuentaDestino" Placeholder="Ingrese Número de Cuenta Destino" FontSize="16" FontAttributes="Bold"/>
-                    <Entry Grid.Row="7" Grid.ColumnSpan="2" TextColor="#0C1F4B" x:Name="cantidadTransferir" Placeholder="Ingrese cantidad a Transferir" FontSize="16" FontAttributes="Bold" Keyboard="Numeric"/>
-                    <Entry Grid.Row="8" Grid.ColumnSpan="2" TextColor="#0C1F4B" x:Name="descripcion" Placeholder="Ingrese descripcion" FontSize="16" FontAttributes="Bold" Keyboard="Numeric"/>
-                    
+                    <Label Grid.Row="3" TextColor="#0C1F4B" Grid.Column="0" Text="Transferencia ACH" FontSize="20" FontAttributes="Bold" HorizontalOptions="Start" VerticalOptions="Start"></Label>
+
+                    <Entry Grid.Row="4" Grid.ColumnSpan="2" TextColor="#0C1F4B" x:Name="cuentaOrigen" Placeholder="Ingrese Número de Cuenta Origen" FontSize="16" FontAttributes="Bold"/>
+                    <Entry Grid.Row="5" Grid.ColumnSpan="2" TextColor="#0C1F4B" x:Name="cuentaDestino" Placeholder="Ingrese Número de Cuenta Destino" FontSize="16" FontAttributes="Bold"/>
+
+                    <Picker Title="Seleccione un banco" x:Name="banco" Grid.Row="6" Grid.ColumnSpan="2" TextColor="#0C1F4B" FontSize="16" FontAttributes="Bold">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>FICOHSA</x:String>
+                                <x:String>Banco de Occidente</x:String>
+                                <x:String>BAC</x:String>
+                                <x:String>Banco Antrlantida</x:String>
+                        </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+
+                    <Entry Grid.Row="7" Grid.ColumnSpan="2" TextColor="#0C1F4B" x:Name="IdentidadReceptor" Placeholder="Ingrese la identidad del receptor" FontSize="16" FontAttributes="Bold"/>
+                    <Entry Grid.Row="8" Grid.ColumnSpan="2" TextColor="#0C1F4B" x:Name="cantidadTransferir" Placeholder="Ingrese cantidad a Transferir" FontSize="16" FontAttributes="Bold" Keyboard="Numeric"/>
+                    <Entry Grid.Row="9" Grid.ColumnSpan="2" TextColor="#0C1F4B" x:Name="descripcion" Placeholder="Ingrese descripcion" FontSize="16" FontAttributes="Bold"/>
+
 
 
                     <Button Grid.Row="11" x:Name="transferir" Clicked="transferir_Clicked" Grid.ColumnSpan="2" HeightRequest="70" TextColor="#ffffff" BackgroundColor="#0C1F4B" Text="REALIZAR TRANFERENCIA" FontSize="14" FontAttributes="Bold" CornerRadius="10"></Button>

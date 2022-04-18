@@ -95,7 +95,7 @@ namespace DarfBank.Views.Dash
 
         private async void btn3_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new Transferencias.Transferencias());
+            await Navigation.PushAsync(new Transferencias.TransferenciasACH());
         }
     }
 }
