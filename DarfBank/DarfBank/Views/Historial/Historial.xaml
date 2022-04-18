@@ -10,7 +10,7 @@
                         <ViewCell >
                             <Frame CornerRadius="20" BackgroundColor="#EDF1FA" HasShadow="True" BorderColor="#EDF1FA" >
                                 <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
-                  ColumnDefinitions="Auto,5,*,Auto" RowDefinitions="Auto,Auto" Padding="10">
+                  ColumnDefinitions="Auto,5,*,Auto" RowDefinitions="Auto,Auto">
                                     <Image Margin="-10,0,0,0" Grid.Row="0" Grid.Column="0" Grid.RowSpan="2"  
                        Source="https://img.icons8.com/cotton/2x/transfer-money.png" HeightRequest="50" ></Image>
                                     <Label Grid.Row="0" Grid.Column="2" Text="{Binding idTipoMovimiento}"  FontAttributes="Bold" TextColor="#202020"></Label>

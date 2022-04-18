@@ -16,9 +16,10 @@ namespace DarfBank.Views.Dash
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Dashboard : ContentPage
     {
-        public Dashboard()
+        public Dashboard(string usuario)
         {
             InitializeComponent();
+            txtB.Text = "Buen dia, " + usuario;
             getcuentas();
         }
 

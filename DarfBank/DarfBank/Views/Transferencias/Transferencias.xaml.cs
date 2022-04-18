@@ -45,7 +45,7 @@ namespace DarfBank.Views.Transferencias
                     if (response.IsSuccessStatusCode)
                     {
                         await DisplayAlert("Alerta", "Transferencia realizada exitosamente", "OK");
-                        Task task = Navigation.PushAsync(new Dashboard());
+                        Task task = Navigation.PushAsync(new Dashboard(Application.Current.Properties["usuario"].ToString()));
 
                     }
                     else

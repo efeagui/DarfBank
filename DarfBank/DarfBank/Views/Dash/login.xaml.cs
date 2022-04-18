@@ -51,7 +51,7 @@ namespace DarfBank.Views.Dash
                         Application.Current.Properties["correo"] = user.usuarios[0].correo;
                         Application.Current.Properties["idCliente"] = user.usuarios[0].idCliente;
                         Application.Current.Properties["imagen"] = user.usuarios[0].imagen;
-                        await Navigation.PushAsync(new Dashboard());
+                        await Navigation.PushAsync(new Dashboard(user.usuarios[0].usuario.ToString()));
                     }
                     else
                     {

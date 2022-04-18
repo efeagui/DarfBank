@@ -58,7 +58,7 @@ namespace DarfBank.Views.Dash
                     if (response.IsSuccessStatusCode)
                     {
                         await DisplayAlert("Alerta", "Pago realizado exitosamente", "OK");
-                        Task task = Navigation.PushAsync(new Dashboard());
+                        Task task = Navigation.PushAsync(new Dashboard(Application.Current.Properties["usuario"].ToString()));
 
                     }
                     else
