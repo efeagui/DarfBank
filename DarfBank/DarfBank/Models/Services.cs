@@ -6,11 +6,18 @@ namespace DarfBank.Models
 {
     internal class Services
     {
-        public int idServicio { get; set; }
-        public int idCuenta { get; set; }
-        public String Servicio { get; set; }
-        public String numero_cuenta { get; set; }
-        public String idTipoServicio { get; set; }
-        public String idCliente { get; set; }
+        public class Servicio
+        {
+            public string idServicio { get; set; }
+            public string servicio { get; set; }
+            public string idTipoServicio { get; set; }
+        }
+
+        public class lstServicios
+        {
+            public IList<Servicio> Servicios { get; set; }
+        }
     }
+
+    
 }

@@ -57,9 +57,7 @@
                 <Button Text="Transferencia ACH a otro bancos" x:Name="btn3" CornerRadius="10" BackgroundColor="#0C1F4B" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" WidthRequest="{Binding Width, Source={x:Reference btn1}}"
                         HeightRequest="120" Grid.Row="0" Grid.Column="1" FontSize="12" FontAttributes="Bold"/>
 
-                <Button Text="Pagar Tarjeta de credito" x:Name="btn4"  VerticalOptions="CenterAndExpand" HorizontalOptions="Center" WidthRequest="{Binding Width, Source={x:Reference btn1}}"
-                         HeightRequest="120" CornerRadius="10" BackgroundColor="#0C1F4B"
-                         Grid.Row="1" Grid.Column="1"  FontSize="12" FontAttributes="Bold"/>
+                
             </Grid>
             <Button x:Name="btnCheckActivity" Grid.Row="5" Text="Cerrar Session" WidthRequest="60" HeightRequest="60" Clicked="BtnCheckActivity_Clicked" TextColor="White" BackgroundColor="#0C1F4B" CornerRadius="30"></Button>
 

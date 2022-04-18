@@ -15,7 +15,7 @@ namespace DarfBank.Views.Dash
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PayServicePage : ContentPage
     {
-        public PayServicePage(int idServicio, int idCuenta, string Servicio, string numeroCuenta, string tipoServicio, string idCliente)
+        public PayServicePage(string idServicio, string idCuenta, string Servicio, string numeroCuenta, string tipoServicio, string idCliente)
         {
             InitializeComponent();
 

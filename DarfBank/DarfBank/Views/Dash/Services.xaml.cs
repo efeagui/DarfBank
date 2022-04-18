@@ -25,21 +25,33 @@ namespace DarfBank.Views.Dash
         {
             ChangeButtonAppearance((Button)sender);
 
-            var request = new HttpRequestMessage();
-
-            request.RequestUri = new Uri("http://192.168.0.11/movil/listServicios.php?idTipoServicio=1");
-            request.Method = HttpMethod.Get;
-            request.Headers.Add("Accept", "application/json");
-            
-            var client = new HttpClient();
-            
-            HttpResponseMessage response = await client.SendAsync(request);
-            
-            if (response.StatusCode == HttpStatusCode.OK)
+            Models.Services.Servicio obj = new Models.Services.Servicio
             {
-                string content = await response.Content.ReadAsStringAsync();
-                var resultado = JsonConvert.DeserializeObject<List<Models.Services>>(content);
-                listViewServices.ItemsSource = resultado;
+                idTipoServicio = "Servicio Publico"
+            };
+            try
+            {
+                using (HttpClient cliente = new HttpClient())
+                {
+                    //Uri RequestUri = new Uri(DireccionesServidor.ListarLogin);
+                    Uri RequestUri = new Uri("https://fernando-castillo-201910080192.000webhostapp.com/Darf_Back/Servicios/ListaServicio.php");
+                    var json = JsonConvert.SerializeObject(obj);
+                    var contentJSON = new StringContent(json, Encoding.UTF8, "application/json");
+                    var response = await cliente.PostAsync(RequestUri, contentJSON);
+
+                    if (response.StatusCode == HttpStatusCode.OK)
+                    {
+
+                        Models.Services.lstServicios lst = new Models.Services.lstServicios();
+                        var contenido = response.Content.ReadAsStringAsync().Result;
+                        lst = JsonConvert.DeserializeObject<Models.Services.lstServicios>(contenido);
+                        listViewServices.ItemsSource = lst.Servicios;
+                    }
+                }
+            }
+            catch (Exception e2)
+            {
+                await DisplayAlert("Error", e2.Message, "OK");
             }
         }
 
@@ -47,21 +59,33 @@ namespace DarfBank.Views.Dash
         {
             ChangeButtonAppearance((Button)sender);
 
-            var request = new HttpRequestMessage();
-
-            request.RequestUri = new Uri("http://192.168.0.11/movil/listServicios.php?idTipoServicio=2");
-            request.Method = HttpMethod.Get;
-            request.Headers.Add("Accept", "application/json");
-
-            var client = new HttpClient();
-
-            HttpResponseMessage response = await client.SendAsync(request);
-
-            if (response.StatusCode == HttpStatusCode.OK)
+            Models.Services.Servicio obj = new Models.Services.Servicio
             {
-                string content = await response.Content.ReadAsStringAsync();
-                var resultado = JsonConvert.DeserializeObject<List<Models.Services>>(content);
-                listViewServices.ItemsSource = resultado;
+                idTipoServicio = "Servicio Privado"
+            };
+            try
+            {
+                using (HttpClient cliente = new HttpClient())
+                {
+                    //Uri RequestUri = new Uri(DireccionesServidor.ListarLogin);
+                    Uri RequestUri = new Uri("https://fernando-castillo-201910080192.000webhostapp.com/Darf_Back/Servicios/ListaServicio.php");
+                    var json = JsonConvert.SerializeObject(obj);
+                    var contentJSON = new StringContent(json, Encoding.UTF8, "application/json");
+                    var response = await cliente.PostAsync(RequestUri, contentJSON);
+
+                    if (response.StatusCode == HttpStatusCode.OK)
+                    {
+
+                        Models.Services.lstServicios lst = new Models.Services.lstServicios();
+                        var contenido = response.Content.ReadAsStringAsync().Result;
+                        lst = JsonConvert.DeserializeObject<Models.Services.lstServicios> (contenido);
+                        listViewServices.ItemsSource = lst.Servicios;
+                    }
+                }
+            }
+            catch (Exception e2)
+            {
+                await DisplayAlert("Error", e2.Message, "OK");
             }
         }
 
@@ -69,21 +93,33 @@ namespace DarfBank.Views.Dash
         {
             ChangeButtonAppearance((Button)sender);
 
-            var request = new HttpRequestMessage();
-
-            request.RequestUri = new Uri("http://192.168.0.11/movil/listServicios.php?idTipoServicio=3");
-            request.Method = HttpMethod.Get;
-            request.Headers.Add("Accept", "application/json");
-
-            var client = new HttpClient();
-
-            HttpResponseMessage response = await client.SendAsync(request);
-
-            if (response.StatusCode == HttpStatusCode.OK)
+            Models.Services.Servicio obj = new Models.Services.Servicio
             {
-                string content = await response.Content.ReadAsStringAsync();
-                var resultado = JsonConvert.DeserializeObject<List<Models.Services>>(content);
-                listViewServices.ItemsSource = resultado;
+                idTipoServicio = "Donacion"
+            };
+            try
+            {
+                using (HttpClient cliente = new HttpClient())
+                {
+                    //Uri RequestUri = new Uri(DireccionesServidor.ListarLogin);
+                    Uri RequestUri = new Uri("https://fernando-castillo-201910080192.000webhostapp.com/Darf_Back/Servicios/ListaServicio.php");
+                    var json = JsonConvert.SerializeObject(obj);
+                    var contentJSON = new StringContent(json, Encoding.UTF8, "application/json");
+                    var response = await cliente.PostAsync(RequestUri, contentJSON);
+
+                    if (response.StatusCode == HttpStatusCode.OK)
+                    {
+
+                        Models.Services.lstServicios lst = new Models.Services.lstServicios();
+                        var contenido = response.Content.ReadAsStringAsync().Result;
+                        lst = JsonConvert.DeserializeObject<Models.Services.lstServicios>(contenido);
+                        listViewServices.ItemsSource = lst.Servicios;
+                    }
+                }
+            }
+            catch (Exception e2)
+            {
+                await DisplayAlert("Error", e2.Message, "OK");
             }
         }
 
@@ -125,8 +161,8 @@ namespace DarfBank.Views.Dash
 
         private async void listViewServices_ItemSelected(object sender, ItemTappedEventArgs e)
         {
-            var details = e.Item as Models.Services;
-            await Navigation.PushAsync(new PayServicePage(details.idServicio, details.idCuenta, details.Servicio, details.numero_cuenta, details.idTipoServicio, details.idCliente));
+            var details = e.Item as Models.Services.Servicio;
+            await Navigation.PushAsync(new PayServicePage(details.idServicio, "", details.servicio, "", details.idTipoServicio, Application.Current.Properties["idCliente"].ToString()));
         }
     }
 }
